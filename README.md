@@ -21,3 +21,7 @@ Tracking and control app for Megan Kale
     - Add a picture (stretch goal)
   - Fork a plant recipe to start plant
   - Login / Account management (stretch goal)
+
+License
+=======
+This project is licensed under the MIT license. See LICENSE.md for details.
