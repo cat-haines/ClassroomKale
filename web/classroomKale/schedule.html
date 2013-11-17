@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Classroom Kale - Recipes</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <nav id="top" class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Classroom Kale</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/track.html">Track</a></li>
+            <li><a href="/schedule.html">Schedule</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+    
+    <div class="container">
+      <div class="row" style="margin-top: 80px">
+		<div class="col-md-offset-2 col-md-8 well">
+			<div class="row">
+			  <div class="col-md-12 form-group">
+			  	<h2 style="display: inline">Lighting Schedule</h2>
+			  	<button type="button" class="btn btn-default" style="vertical-align: top; margin-left: 15px;" onclick="newLight()"><span class="glyphicon glyphicon-plus"></span> New</button></div>
+			  <div id="light">
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-12 form-group">
+			  	<h2 style="display: inline">Watering Schedule</h2>
+			  	<button type="button" class="btn btn-default" style="vertical-align: top; margin-left: 15px;" onclick="newWater()"><span class="glyphicon glyphicon-plus"></span> New</button></div>
+			  <div id="water">
+			  </div>
+			</div>
+			
+			<div class="row">
+			  <div class="col-md-4">
+			  	<button type="button" class="btn btn-primary" style="margin-top: 36px;" onclick="save()">Save</button>
+			  </div>
+			</div>
+		</div>
+      </div>
+      <hr>
+
+      <footer>
+        <div class="row">
+          <div class="col-lg-12">
+            <p class="text-center">Copyright &copy; Electric Imp 2013 &middot; <a href="http://facebook.com/electricimp">Facebook</a> &middot; <a href="http://twitter.com/electricimp">Twitter</a></p>
+          </div>
+        </div>
+      </footer>
+      
+    </div><!-- /.container -->
+
+  <!-- javascript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdn.firebase.com/v0/firebase.js"></script>
+
+  <script>
+    function logSuccess(title, message, autoclear) {
+		autoclear = autoclear || true;
+		var t = new Date().getTime();
+		$('#top').append('<div id=\'' + t + '\' class=\'alert alert-success\'><button type=\'button\' class=\'close\' data-dismiss=\'alert\'>x</button><strong>' + title + '</strong>&nbsp;' + message + '</div>');
+		if (autoclear) {
+			window.setTimeout(function() { $('#' + t).alert('close'); }, 3000);
+		}
+	}
+	
+	
+    var Kale = new Firebase('https://classroomkale.firebaseio.com/kales/');
+    
+	Kale.once('value', function(snapshot) {
+		var kale = snapshot.val()[1];
+		var recipe = kale.recipe;
+		var lights = recipe.lights;
+		var pump = recipe.pump;
+		
+		for(var key in lights) {
+			newLight();
+			$(".light-control").last().children()[0].value = lights[key].onat;
+			$(".light-control").last().children()[1].value = lights[key].onfor;
+			$(".light-control").last().children()[2].value = lights[key].color;
+		}
+		
+		for(var key in pump) {
+			newWater();
+			$(".pump-control").last().children()[0].value = pump[key].onat;
+			$(".pump-control").last().children()[1].value = pump[key].amount;
+		}
+    });
+
+	var waterHtml = "<div class='well row' style='width: 80%; margin-left: 20px;'><div class='col-md-4'><p style='margin-top: 10px'><strong>Turn pump on at (24h): </strong></p><p style='margin-top: 10px'><strong>Amount of water (ml): </strong></p></div><div class='col-md-3 pump-control'><input type='text' class='form-control pump-onat' placeholder='eg: 14:00'><input type='text' class='form-control pump-amount' placeholder='eg: 20'></div><div class='col-md-2 col-md-offset-3'><button type='button' class='btn btn-danger' style='margin-top: 36px;' onclick='$(this).parent().parent().remove();'>Remove</button></div></div>"
+	function newWater() {
+		$("#water").append(waterHtml);
+		
+	}
+	
+	var lightHtml = "<div class='well row' style='width: 80%; margin-left: 20px;'><div class='col-md-4'><p style='margin-top: 10px'><strong>Turn light on at (24h): </strong></p><p style='margin-top: 10px'><strong>Keep lights on for (min): </strong></p><p style='margin-top: 10px'><strong>Set light color to (hex): </strong></p></div><div class='col-md-3 light-control'><input type='text' class='form-control light-onat' placeholder='eg: 14:00'><input type='text' class='form-control light-onfor' placeholder='eg: 15 minutes'><input type='text' class='form-control light-color' placeholder='eg: FF0000'></div><div class='col-md-2 col-md-offset-3'><button type='button' class='btn btn-danger' style='margin-top: 68px;' onclick='$(this).parent().parent().remove();'>Remove</button></div></div>"
+	function newLight() {
+		$("#light").append(lightHtml);
+	}  
+	
+	function save() {
+		var sendTo = "https://agent.electricimp.com/i8UugRGJORm2/schedule"
+		
+		var lightTimes = $(".light-control");
+		var pumpTimes = $(".pump-control");
+		var schedule = { "lights": [], "pump": [] };
+		
+		lightTimes.each(function() {
+ 			schedule.lights.push({
+				"onat": $(this).children()[0].value,
+				"onfor": $(this).children()[1].value,
+				"color": $(this).children()[2].value
+			});
+		});
+		pumpTimes.each(function() {
+			schedule.pump.push({
+				"onat": $(this).children()[0].value,
+				"amount": $(this).children()[1].value
+			})
+		});
+		
+		$.ajax({
+			url: sendTo,
+			type: "POST",
+			dataType: "application/json",
+			data: JSON.stringify(schedule)
+		});
+		
+		var recipe = new Firebase('https://classroomkale.firebaseio.com/kales/1/recipe');
+
+		recipe.update(schedule, function(error) {
+		  if (error) alert('Synchronization failed.');
+		  else logSuccess('Success!', 'Schedule updated!');
+		});
+  }
+
+  </script>
+  </body>
+
+</html>
