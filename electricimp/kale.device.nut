@@ -136,6 +136,7 @@ function setColor(colorTuple) {
 testPixels <- [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 currentTestPixel <- 0;
 pAdd <- 1;
+rainbowCntr <- 0;
 function neoTest(d = null) { 
   pixelStrip.writePixel(testPixels[0], 0, 0, 0);
   for(local i = 1; i < 40; i++) {
@@ -176,7 +177,14 @@ function rainbow() {
   
     for (local i = 0; i < NUMPIXELS; i++) testPixels[i] = testPixels[i+1];
     testPixels[NUMPIXELS-1] = currentTestPixel;
-  
+    
+    if (rainbowCntr < 10) {
+        rainbowCntr++;
+    } else {
+        rainbowCntr = 0;
+        agent.send("colorIsNow",format("%02x%02x%02x",(math.rand() % 256),(math.rand() % 256),(math.rand() % 256)));
+    }
+    
     if (!stopRainbow) imp.wakeup(DELAY, rainbow);
 }
 

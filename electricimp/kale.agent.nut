@@ -8,7 +8,7 @@ const FBRATELIMIT = 1; //minimum time between firebase posts
 
 // Device Status
 STATS <- {temperature = 0, humidity = 0, pump = 0, light = "000000", overflow = 0, timestamp = 0};
-SCHED <- {lights = {onat = 0, offat = 0}, pump = []};
+SCHED <- {lights = [], pump = [], color = 0};
 
 /* GLOBAL FUNCTIONS AND CLASSES ----------------------------------------------*/
 
@@ -43,39 +43,27 @@ function setPump(value) {
     local res = req.sendsync();
     server.log("Sent pump request, got: "+res.body);
     STATS.pump = value;
+    postUpdate();
 }
 
 function secondsTill(targetTime) {
     local data = split(targetTime,":");
-    local targetHour = data[0].tointeger();
-    local targetMin = data[1].tointeger();
+    local target = { hour = data[0].tointeger(), min = data[1].tointeger() };
+    local now = date(time() - (3600 * 8));
+    
+    if ((target.hour < now.hour) || (target.hour == now.hour && target.min < now.min)) {
+        target.hour += 24;
+    }
+    
     local secondsTill = 0;
-    // correct "now" for UTC 
-    local now = date(time() - (3600 * 7));
-    
-    // do the hour math
-    if (now.hour.tointeger() > targetHour) {
-        secondsTill += ((23 - now.hour.tointeger()) * 3600);
-    } else {
-        secondsTill += ((targetHour - now.hour.tointeger()) * 3600);
-    }
-    
-    // do the minute math
-    if (now.min > targetMin) {
-        secondsTill += ((59 - now.min) * 60);
-    } else {
-        secondsTill += ((targetMin - now.min) * 60);
-    }
-    
-    // do the seconds math
-    secondsTill += (59 - now.sec);
-    
+    secondsTill += (target.hour - now.hour) * 3600;
+    secondsTill += (target.min - now.min) * 60;
     return secondsTill;
 }
 
 function waterDose(vol) {
     // our pump doses the plants with 0.67 mL per second 
-    local doseTime = (vol * 1.0) / (0.67);
+    local doseTime = (vol.tointeger() * 1.0) / (0.67);
     return doseTime;
 }
 
@@ -102,18 +90,12 @@ function decodeColorString(colorString) {
 
 function lightsOnSched() {
     server.log("Executing Scheduled Lights-On.");
-    device.send("setColor",decodeColorString(SCHED.lights.color));
-    
-    // schedule wake-and-lights-on
-    imp.wakeup(secondsTill(SCHED.lights.onat), lightsOnSched);
+    device.send("setColor",decodeColorString(SCHED.color));
 }
 
 function lightsOffSched() {
     server.log("Executing Scheduled Lights-Off.");
     device.send("setColor",{r=0,g=0,b=0});
-    
-    // schedule wake-and-lights-off
-    imp.wakeup(secondsTill(SCHED.lights.offat), lightsOffSched);
 }
 
 function startSchedWatering() {
@@ -126,11 +108,19 @@ function endSchedWatering() {
     setPump(0);
 }
 
-function refreshPumpSched() {
+function refreshSched() {
+    
+    foreach (lighting in SCHED.lights) {
+       // schedule wake-and-lights-on
+        imp.wakeup(secondsTill(lighting.onat), lightsOnSched);
+        // schedule wake-and-lights-off
+        imp.wakeup(secondsTill(lighting.onat)+(lighting.onfor.tointeger() * 60), lightsOffSched); 
+    }
+    
     foreach (watering in SCHED.pump) {
         local waterTime = secondsTill(watering.onat);
         imp.wakeup(waterTime, startSchedWatering);
-        imp.wakeup((waterTime + waterDose(watering.amount)), stopSchedWatering);
+        imp.wakeup((waterTime + waterDose(watering.amount)), endSchedWatering);
     }
     
     imp.wakeup(secondsTill("00:00"), refreshPumpSched);
@@ -138,37 +128,31 @@ function refreshPumpSched() {
 
 function setNewSched(sched) {
     if ("lights" in sched) {
-        if ("onat" in sched.lights) {
-            SCHED.lights.onat = sched.lights.onat;
-        } else {
-            return;
-        }
-        if ("offat" in sched.lights) {
-            SCHED.lights.offat = sched.lights.offat;
-        } else {
-            return;
-        }
-        if ("color" in sched.lights) {
-            SCHED.lights.color = sched.lights.color;
-        }
+        SCHED.lights = sched.lights;
     }
     if ("pump" in sched) {
         SCHED.pump = sched.pump;
     }
     
-    // schedule wake-and-lights-on
-    imp.wakeup(secondsTill(SCHED.lights.onat), lightsOnSched);
     
-    // schedule wake-and-lights-off
-    imp.wakeup(secondsTill(SCHED.lights.offat), lightsOffSched);
+    foreach (lighting in SCHED.lights) {
+        SCHED.color = lighting.color;
+        // schedule wake-and-lights-on
+        server.log("lights-on in "+secondsTill(lighting.onat));
+        imp.wakeup(secondsTill(lighting.onat), lightsOnSched);
+        // schedule wake-and-lights-off
+        server.log("lights-off in "+(secondsTill(lighting.onat)+(lighting.onfor.tointeger() * 60)));
+        imp.wakeup(secondsTill(lighting.onat)+(lighting.onfor.tointeger() * 60), lightsOffSched); 
+    }
+    
     
     foreach (watering in SCHED.pump) {
         local waterTime = secondsTill(watering.onat);
         imp.wakeup(waterTime, startSchedWatering);
-        imp.wakeup((waterTime + waterDose(watering.amount)), stopSchedWatering);
+        imp.wakeup((waterTime + waterDose(watering.amount)), endSchedWatering);
     }
     
-    imp.wakeup(secondsTill("00:00"), refreshPumpSched);
+    imp.wakeup(secondsTill("00:00"), refreshSched);
 }
 
 // -----------------------------------------------------------------------------
@@ -192,17 +176,17 @@ class Firebase {
         authkey = _authkey;
         agentid = http.agenturl().slice(-12);
         headers = {"Content-Type": "application/json"};
-		set_path(_path);
+        set_path(_path);
     }
     
     
     // ........................................................................
-	function set_path(_path) {
-		if (!_path) {
-			_path = "agents/" + agentid;
-		}
+    function set_path(_path) {
+        if (!_path) {
+            _path = "agents/" + agentid;
+        }
         url = "https://" + database + ".firebaseIO.com/" + _path + ".json?auth=" + authkey;
-	}
+    }
 
 
     // ........................................................................
@@ -324,6 +308,7 @@ http.onrequest(function(req, res) {
         return;
     } else if (req.path == "/schedule" || req.path == "/schedule") {
         server.log("Setting new schedule");
+        server.log(req.body);
         local newSched = http.jsondecode(req.body);
         setNewSched(newSched);
         res.send(200,SCHED);
@@ -358,4 +343,3 @@ http.onrequest(function(req, res) {
 device.send("getTH",0);
 
 fbase <- Firebase(DBASE, FIREBASEKEY);
-
