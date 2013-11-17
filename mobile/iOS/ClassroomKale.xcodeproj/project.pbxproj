@@ -1,0 +1,640 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9C89F8A01837477000754BDB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C89F89F1837477000754BDB /* Foundation.framework */; };
+		9C89F8A21837477000754BDB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C89F8A11837477000754BDB /* CoreGraphics.framework */; };
+		9C89F8A41837477000754BDB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C89F8A31837477000754BDB /* UIKit.framework */; };
+		9C89F8AA1837477000754BDB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C89F8A81837477000754BDB /* InfoPlist.strings */; };
+		9C89F8AC1837477000754BDB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C89F8AB1837477000754BDB /* main.m */; };
+		9C89F8B01837477000754BDB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C89F8AF1837477000754BDB /* AppDelegate.m */; };
+		9C89F8B31837477000754BDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C89F8B11837477000754BDB /* Main.storyboard */; };
+		9C89F8B61837477000754BDB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C89F8B51837477000754BDB /* ViewController.m */; };
+		9C89F8B81837477000754BDB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C89F8B71837477000754BDB /* Images.xcassets */; };
+		9C89F8BF1837477000754BDB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C89F8BE1837477000754BDB /* XCTest.framework */; };
+		9C89F8C01837477000754BDB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C89F89F1837477000754BDB /* Foundation.framework */; };
+		9C89F8C11837477000754BDB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C89F8A31837477000754BDB /* UIKit.framework */; };
+		9C89F8C91837477000754BDB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C89F8C71837477000754BDB /* InfoPlist.strings */; };
+		9C89F8CB1837477000754BDB /* ClassroomKaleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C89F8CA1837477000754BDB /* ClassroomKaleTests.m */; };
+		9C89F8DA1837488900754BDB /* launch2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C89F8D91837488900754BDB /* launch2x.png */; };
+		9C89F8DC183749B300754BDB /* megan.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C89F8DB183749B300754BDB /* megan.png */; };
+		9C89F8DF1837558600754BDB /* vickie.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9C89F8DD1837558600754BDB /* vickie.jpg */; };
+		9C89F8E01837558600754BDB /* kimmy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9C89F8DE1837558600754BDB /* kimmy.jpg */; };
+		9C89F8EB18375AE700754BDB /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C89F8EA18375AE700754BDB /* TabBarController.m */; };
+		9C89F8EE18376A0300754BDB /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C89F8ED18376A0300754BDB /* TableViewController.m */; };
+		9C89F8F118376B9700754BDB /* TrackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C89F8F018376B9700754BDB /* TrackController.m */; };
+		9C89F8F3183773E400754BDB /* colorWheel1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C89F8F2183773E400754BDB /* colorWheel1.png */; };
+		9C89F8FF1837F36C00754BDB /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C89F8FE1837F36C00754BDB /* Firebase.framework */; };
+		9C89F9011837F3A300754BDB /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C89F9001837F3A300754BDB /* libicucore.dylib */; };
+		9C89F9031837F3AA00754BDB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C89F9021837F3AA00754BDB /* CFNetwork.framework */; };
+		9C89F9051837F3B000754BDB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C89F9041837F3B000754BDB /* Security.framework */; };
+		9C89F9071837F3B700754BDB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C89F9061837F3B700754BDB /* SystemConfiguration.framework */; };
+		9C89F90A1838176F00754BDB /* SelectColorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C89F9091838176F00754BDB /* SelectColorController.m */; };
+		9C89F91018383E5200754BDB /* ladybug.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C89F90F18383E5200754BDB /* ladybug.png */; };
+		9C89F91218383EE600754BDB /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C89F91118383EE600754BDB /* clock.png */; };
+		9C89F91418383F1300754BDB /* pen.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C89F91318383F1300754BDB /* pen.png */; };
+		9C89F91618383F8400754BDB /* thermometer.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C89F91518383F8400754BDB /* thermometer.png */; };
+		9C89F91818383FB300754BDB /* race-flag.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C89F91718383FB300754BDB /* race-flag.png */; };
+		9C89F9241838455E00754BDB /* kaleicon57.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C89F91A1838455E00754BDB /* kaleicon57.png */; };
+		9C89F9251838455E00754BDB /* kaleicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C89F91B1838455E00754BDB /* kaleicon.png */; };
+		9C89F9261838455E00754BDB /* kaleicon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C89F91C1838455E00754BDB /* kaleicon114.png */; };
+		9C89F9271838455E00754BDB /* kaleicon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C89F91D1838455E00754BDB /* kaleicon72.png */; };
+		9C89F9281838455E00754BDB /* kaleicon120.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C89F91E1838455E00754BDB /* kaleicon120.png */; };
+		9C89F9291838455E00754BDB /* kaleicon144.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C89F91F1838455E00754BDB /* kaleicon144.png */; };
+		9C89F92A1838455E00754BDB /* kaleicon29.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C89F9201838455E00754BDB /* kaleicon29.png */; };
+		9C89F92B1838455E00754BDB /* kaleicon58.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C89F9211838455E00754BDB /* kaleicon58.png */; };
+		9C89F92C1838455E00754BDB /* kaleicon48.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C89F9221838455E00754BDB /* kaleicon48.png */; };
+		9C89F92D1838455E00754BDB /* kaleicon96.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C89F9231838455E00754BDB /* kaleicon96.png */; };
+		9C89F92F183845A900754BDB /* kaleicon80.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C89F92E183845A900754BDB /* kaleicon80.png */; };
+		9C89F933183849B400754BDB /* rainbow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C89F932183849B400754BDB /* rainbow.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9C89F8C21837477000754BDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C89F8941837477000754BDB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C89F89B1837477000754BDB;
+			remoteInfo = ClassroomKale;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9C89F89C1837477000754BDB /* ClassroomKale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassroomKale.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C89F89F1837477000754BDB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9C89F8A11837477000754BDB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9C89F8A31837477000754BDB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9C89F8A71837477000754BDB /* ClassroomKale-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ClassroomKale-Info.plist"; sourceTree = "<group>"; };
+		9C89F8A91837477000754BDB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9C89F8AB1837477000754BDB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9C89F8AD1837477000754BDB /* ClassroomKale-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ClassroomKale-Prefix.pch"; sourceTree = "<group>"; };
+		9C89F8AE1837477000754BDB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9C89F8AF1837477000754BDB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9C89F8B21837477000754BDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9C89F8B41837477000754BDB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9C89F8B51837477000754BDB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9C89F8B71837477000754BDB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9C89F8BD1837477000754BDB /* ClassroomKaleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClassroomKaleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C89F8BE1837477000754BDB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		9C89F8C61837477000754BDB /* ClassroomKaleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ClassroomKaleTests-Info.plist"; sourceTree = "<group>"; };
+		9C89F8C81837477000754BDB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9C89F8CA1837477000754BDB /* ClassroomKaleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassroomKaleTests.m; sourceTree = "<group>"; };
+		9C89F8D91837488900754BDB /* launch2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch2x.png; sourceTree = "<group>"; };
+		9C89F8DB183749B300754BDB /* megan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = megan.png; sourceTree = "<group>"; };
+		9C89F8DD1837558600754BDB /* vickie.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = vickie.jpg; sourceTree = "<group>"; };
+		9C89F8DE1837558600754BDB /* kimmy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kimmy.jpg; sourceTree = "<group>"; };
+		9C89F8E918375AE700754BDB /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		9C89F8EA18375AE700754BDB /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		9C89F8EC18376A0300754BDB /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		9C89F8ED18376A0300754BDB /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		9C89F8EF18376B9700754BDB /* TrackController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackController.h; sourceTree = "<group>"; };
+		9C89F8F018376B9700754BDB /* TrackController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackController.m; sourceTree = "<group>"; };
+		9C89F8F2183773E400754BDB /* colorWheel1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colorWheel1.png; sourceTree = "<group>"; };
+		9C89F8FE1837F36C00754BDB /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
+		9C89F9001837F3A300754BDB /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		9C89F9021837F3AA00754BDB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		9C89F9041837F3B000754BDB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9C89F9061837F3B700754BDB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9C89F9081838176F00754BDB /* SelectColorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectColorController.h; sourceTree = "<group>"; };
+		9C89F9091838176F00754BDB /* SelectColorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectColorController.m; sourceTree = "<group>"; };
+		9C89F90F18383E5200754BDB /* ladybug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ladybug.png; sourceTree = "<group>"; };
+		9C89F91118383EE600754BDB /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
+		9C89F91318383F1300754BDB /* pen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pen.png; sourceTree = "<group>"; };
+		9C89F91518383F8400754BDB /* thermometer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thermometer.png; sourceTree = "<group>"; };
+		9C89F91718383FB300754BDB /* race-flag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "race-flag.png"; sourceTree = "<group>"; };
+		9C89F91A1838455E00754BDB /* kaleicon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kaleicon57.png; sourceTree = "<group>"; };
+		9C89F91B1838455E00754BDB /* kaleicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kaleicon.png; sourceTree = "<group>"; };
+		9C89F91C1838455E00754BDB /* kaleicon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kaleicon114.png; sourceTree = "<group>"; };
+		9C89F91D1838455E00754BDB /* kaleicon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kaleicon72.png; sourceTree = "<group>"; };
+		9C89F91E1838455E00754BDB /* kaleicon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kaleicon120.png; sourceTree = "<group>"; };
+		9C89F91F1838455E00754BDB /* kaleicon144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kaleicon144.png; sourceTree = "<group>"; };
+		9C89F9201838455E00754BDB /* kaleicon29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kaleicon29.png; sourceTree = "<group>"; };
+		9C89F9211838455E00754BDB /* kaleicon58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kaleicon58.png; sourceTree = "<group>"; };
+		9C89F9221838455E00754BDB /* kaleicon48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kaleicon48.png; sourceTree = "<group>"; };
+		9C89F9231838455E00754BDB /* kaleicon96.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kaleicon96.png; sourceTree = "<group>"; };
+		9C89F92E183845A900754BDB /* kaleicon80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kaleicon80.png; sourceTree = "<group>"; };
+		9C89F932183849B400754BDB /* rainbow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rainbow.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9C89F8991837477000754BDB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C89F9071837F3B700754BDB /* SystemConfiguration.framework in Frameworks */,
+				9C89F9051837F3B000754BDB /* Security.framework in Frameworks */,
+				9C89F9031837F3AA00754BDB /* CFNetwork.framework in Frameworks */,
+				9C89F9011837F3A300754BDB /* libicucore.dylib in Frameworks */,
+				9C89F8A21837477000754BDB /* CoreGraphics.framework in Frameworks */,
+				9C89F8A41837477000754BDB /* UIKit.framework in Frameworks */,
+				9C89F8A01837477000754BDB /* Foundation.framework in Frameworks */,
+				9C89F8FF1837F36C00754BDB /* Firebase.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C89F8BA1837477000754BDB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C89F8BF1837477000754BDB /* XCTest.framework in Frameworks */,
+				9C89F8C11837477000754BDB /* UIKit.framework in Frameworks */,
+				9C89F8C01837477000754BDB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9C89F8931837477000754BDB = {
+			isa = PBXGroup;
+			children = (
+				9C89F8A51837477000754BDB /* ClassroomKale */,
+				9C89F8C41837477000754BDB /* ClassroomKaleTests */,
+				9C89F89E1837477000754BDB /* Frameworks */,
+				9C89F89D1837477000754BDB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9C89F89D1837477000754BDB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C89F89C1837477000754BDB /* ClassroomKale.app */,
+				9C89F8BD1837477000754BDB /* ClassroomKaleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9C89F89E1837477000754BDB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C89F9061837F3B700754BDB /* SystemConfiguration.framework */,
+				9C89F9041837F3B000754BDB /* Security.framework */,
+				9C89F9021837F3AA00754BDB /* CFNetwork.framework */,
+				9C89F9001837F3A300754BDB /* libicucore.dylib */,
+				9C89F8FE1837F36C00754BDB /* Firebase.framework */,
+				9C89F89F1837477000754BDB /* Foundation.framework */,
+				9C89F8A11837477000754BDB /* CoreGraphics.framework */,
+				9C89F8A31837477000754BDB /* UIKit.framework */,
+				9C89F8BE1837477000754BDB /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C89F8A51837477000754BDB /* ClassroomKale */ = {
+			isa = PBXGroup;
+			children = (
+				9C89F8AE1837477000754BDB /* AppDelegate.h */,
+				9C89F8AF1837477000754BDB /* AppDelegate.m */,
+				9C89F8B11837477000754BDB /* Main.storyboard */,
+				9C89F9081838176F00754BDB /* SelectColorController.h */,
+				9C89F9091838176F00754BDB /* SelectColorController.m */,
+				9C89F8EF18376B9700754BDB /* TrackController.h */,
+				9C89F8F018376B9700754BDB /* TrackController.m */,
+				9C89F8EC18376A0300754BDB /* TableViewController.h */,
+				9C89F8ED18376A0300754BDB /* TableViewController.m */,
+				9C89F8E918375AE700754BDB /* TabBarController.h */,
+				9C89F8EA18375AE700754BDB /* TabBarController.m */,
+				9C89F8B41837477000754BDB /* ViewController.h */,
+				9C89F8B51837477000754BDB /* ViewController.m */,
+				9C89F8B71837477000754BDB /* Images.xcassets */,
+				9C89F8D6183747A100754BDB /* Images */,
+				9C89F919183844C200754BDB /* Icons */,
+				9C89F8A61837477000754BDB /* Supporting Files */,
+			);
+			path = ClassroomKale;
+			sourceTree = "<group>";
+		};
+		9C89F8A61837477000754BDB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9C89F8A71837477000754BDB /* ClassroomKale-Info.plist */,
+				9C89F8A81837477000754BDB /* InfoPlist.strings */,
+				9C89F8AB1837477000754BDB /* main.m */,
+				9C89F8AD1837477000754BDB /* ClassroomKale-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9C89F8C41837477000754BDB /* ClassroomKaleTests */ = {
+			isa = PBXGroup;
+			children = (
+				9C89F8CA1837477000754BDB /* ClassroomKaleTests.m */,
+				9C89F8C51837477000754BDB /* Supporting Files */,
+			);
+			path = ClassroomKaleTests;
+			sourceTree = "<group>";
+		};
+		9C89F8C51837477000754BDB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9C89F8C61837477000754BDB /* ClassroomKaleTests-Info.plist */,
+				9C89F8C71837477000754BDB /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9C89F8D6183747A100754BDB /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				9C89F932183849B400754BDB /* rainbow.png */,
+				9C89F91718383FB300754BDB /* race-flag.png */,
+				9C89F91518383F8400754BDB /* thermometer.png */,
+				9C89F91318383F1300754BDB /* pen.png */,
+				9C89F91118383EE600754BDB /* clock.png */,
+				9C89F90F18383E5200754BDB /* ladybug.png */,
+				9C89F8F2183773E400754BDB /* colorWheel1.png */,
+				9C89F8D91837488900754BDB /* launch2x.png */,
+				9C89F8DD1837558600754BDB /* vickie.jpg */,
+				9C89F8DE1837558600754BDB /* kimmy.jpg */,
+				9C89F8DB183749B300754BDB /* megan.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		9C89F919183844C200754BDB /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				9C89F91B1838455E00754BDB /* kaleicon.png */,
+				9C89F9201838455E00754BDB /* kaleicon29.png */,
+				9C89F9221838455E00754BDB /* kaleicon48.png */,
+				9C89F91A1838455E00754BDB /* kaleicon57.png */,
+				9C89F9211838455E00754BDB /* kaleicon58.png */,
+				9C89F91D1838455E00754BDB /* kaleicon72.png */,
+				9C89F92E183845A900754BDB /* kaleicon80.png */,
+				9C89F9231838455E00754BDB /* kaleicon96.png */,
+				9C89F91C1838455E00754BDB /* kaleicon114.png */,
+				9C89F91E1838455E00754BDB /* kaleicon120.png */,
+				9C89F91F1838455E00754BDB /* kaleicon144.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9C89F89B1837477000754BDB /* ClassroomKale */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C89F8CE1837477000754BDB /* Build configuration list for PBXNativeTarget "ClassroomKale" */;
+			buildPhases = (
+				9C89F8981837477000754BDB /* Sources */,
+				9C89F8991837477000754BDB /* Frameworks */,
+				9C89F89A1837477000754BDB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ClassroomKale;
+			productName = ClassroomKale;
+			productReference = 9C89F89C1837477000754BDB /* ClassroomKale.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9C89F8BC1837477000754BDB /* ClassroomKaleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C89F8D11837477000754BDB /* Build configuration list for PBXNativeTarget "ClassroomKaleTests" */;
+			buildPhases = (
+				9C89F8B91837477000754BDB /* Sources */,
+				9C89F8BA1837477000754BDB /* Frameworks */,
+				9C89F8BB1837477000754BDB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C89F8C31837477000754BDB /* PBXTargetDependency */,
+			);
+			name = ClassroomKaleTests;
+			productName = ClassroomKaleTests;
+			productReference = 9C89F8BD1837477000754BDB /* ClassroomKaleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9C89F8941837477000754BDB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Electric Imp";
+				TargetAttributes = {
+					9C89F8BC1837477000754BDB = {
+						TestTargetID = 9C89F89B1837477000754BDB;
+					};
+				};
+			};
+			buildConfigurationList = 9C89F8971837477000754BDB /* Build configuration list for PBXProject "ClassroomKale" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9C89F8931837477000754BDB;
+			productRefGroup = 9C89F89D1837477000754BDB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9C89F89B1837477000754BDB /* ClassroomKale */,
+				9C89F8BC1837477000754BDB /* ClassroomKaleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9C89F89A1837477000754BDB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C89F8DC183749B300754BDB /* megan.png in Resources */,
+				9C89F9241838455E00754BDB /* kaleicon57.png in Resources */,
+				9C89F92A1838455E00754BDB /* kaleicon29.png in Resources */,
+				9C89F8DA1837488900754BDB /* launch2x.png in Resources */,
+				9C89F91618383F8400754BDB /* thermometer.png in Resources */,
+				9C89F8E01837558600754BDB /* kimmy.jpg in Resources */,
+				9C89F8DF1837558600754BDB /* vickie.jpg in Resources */,
+				9C89F92F183845A900754BDB /* kaleicon80.png in Resources */,
+				9C89F9271838455E00754BDB /* kaleicon72.png in Resources */,
+				9C89F91018383E5200754BDB /* ladybug.png in Resources */,
+				9C89F8B81837477000754BDB /* Images.xcassets in Resources */,
+				9C89F91218383EE600754BDB /* clock.png in Resources */,
+				9C89F933183849B400754BDB /* rainbow.png in Resources */,
+				9C89F92B1838455E00754BDB /* kaleicon58.png in Resources */,
+				9C89F91818383FB300754BDB /* race-flag.png in Resources */,
+				9C89F9281838455E00754BDB /* kaleicon120.png in Resources */,
+				9C89F9291838455E00754BDB /* kaleicon144.png in Resources */,
+				9C89F8AA1837477000754BDB /* InfoPlist.strings in Resources */,
+				9C89F92D1838455E00754BDB /* kaleicon96.png in Resources */,
+				9C89F91418383F1300754BDB /* pen.png in Resources */,
+				9C89F9251838455E00754BDB /* kaleicon.png in Resources */,
+				9C89F8B31837477000754BDB /* Main.storyboard in Resources */,
+				9C89F92C1838455E00754BDB /* kaleicon48.png in Resources */,
+				9C89F9261838455E00754BDB /* kaleicon114.png in Resources */,
+				9C89F8F3183773E400754BDB /* colorWheel1.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C89F8BB1837477000754BDB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C89F8C91837477000754BDB /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9C89F8981837477000754BDB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C89F8B61837477000754BDB /* ViewController.m in Sources */,
+				9C89F8F118376B9700754BDB /* TrackController.m in Sources */,
+				9C89F90A1838176F00754BDB /* SelectColorController.m in Sources */,
+				9C89F8EB18375AE700754BDB /* TabBarController.m in Sources */,
+				9C89F8B01837477000754BDB /* AppDelegate.m in Sources */,
+				9C89F8EE18376A0300754BDB /* TableViewController.m in Sources */,
+				9C89F8AC1837477000754BDB /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C89F8B91837477000754BDB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C89F8CB1837477000754BDB /* ClassroomKaleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9C89F8C31837477000754BDB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C89F89B1837477000754BDB /* ClassroomKale */;
+			targetProxy = 9C89F8C21837477000754BDB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9C89F8A81837477000754BDB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C89F8A91837477000754BDB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9C89F8B11837477000754BDB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C89F8B21837477000754BDB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9C89F8C71837477000754BDB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C89F8C81837477000754BDB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9C89F8CC1837477000754BDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9C89F8CD1837477000754BDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9C89F8CF1837477000754BDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/aron/Sites/electricimp/ClassroomKale,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ClassroomKale/ClassroomKale-Prefix.pch";
+				INFOPLIST_FILE = "ClassroomKale/ClassroomKale-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9C89F8D01837477000754BDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/aron/Sites/electricimp/ClassroomKale,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ClassroomKale/ClassroomKale-Prefix.pch";
+				INFOPLIST_FILE = "ClassroomKale/ClassroomKale-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		9C89F8D21837477000754BDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ClassroomKale.app/ClassroomKale";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ClassroomKale/ClassroomKale-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ClassroomKaleTests/ClassroomKaleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		9C89F8D31837477000754BDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ClassroomKale.app/ClassroomKale";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ClassroomKale/ClassroomKale-Prefix.pch";
+				INFOPLIST_FILE = "ClassroomKaleTests/ClassroomKaleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9C89F8971837477000754BDB /* Build configuration list for PBXProject "ClassroomKale" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C89F8CC1837477000754BDB /* Debug */,
+				9C89F8CD1837477000754BDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C89F8CE1837477000754BDB /* Build configuration list for PBXNativeTarget "ClassroomKale" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C89F8CF1837477000754BDB /* Debug */,
+				9C89F8D01837477000754BDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9C89F8D11837477000754BDB /* Build configuration list for PBXNativeTarget "ClassroomKaleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C89F8D21837477000754BDB /* Debug */,
+				9C89F8D31837477000754BDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9C89F8941837477000754BDB /* Project object */;
+}
